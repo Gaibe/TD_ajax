@@ -1,17 +1,17 @@
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <html>
 
-<head>
 
-</head>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Produits</title>
+	</head>
 
-  <title>Produits</title>
+  	
 
 
 <body>
 
-</div>
+<div id="liste-produits"></div>
 
 
 
