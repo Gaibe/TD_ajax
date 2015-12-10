@@ -11,7 +11,9 @@
 
 <body>
 
-<div id="liste-produits"></div>
+<ul id="liste-produits">
+
+</ul>
 
 
 

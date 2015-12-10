@@ -4,10 +4,17 @@ $(document).ready(function () {
     })
     .done(function (data) {
         var articles = $.parseJSON(data);
-        var mabite = $("#liste-produits").append($("<ul>"));
+        var objJson = $("#liste-produits") ;
 
         articles.forEach(function (iteration) {
-            mabite.append($("<li>").text(iteration.produit.description));
+            objJson.append($("<li>").append($("<ul>")
+                                   .append($("<li>").append(iteration.produit.nom))
+                                   .append($("<li>").append(iteration.produit.description))
+                                   .append($("<li>").append(iteration.produit.prix)) )
+                                   );
+
+
+           
         });
     })
     .fail(function () {
