@@ -13,4 +13,4 @@ $(document).ready(function () {
     .fail(function () {
         alert("Echec");
     });
-}
+});
