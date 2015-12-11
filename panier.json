@@ -1,0 +1,19 @@
+
+[
+    {
+      "produit": {
+        "id" : 1,
+        "nom" : "Seagate Barracuda 7200.14 SATA 6Gb/s 1 To",
+        "prix": 56.95,
+        "description": "Les disques durs Seagate Barracuda 7200.14 SATA 6Gb/s renferment une puissance inégalée dans un seul disque. Une même plate-forme pour toutes les applications de stockage de bureau. Un disque aux performances éprouvées associant fiabilité, simplicité et capacité."
+      }
+    },
+    {
+      "produit": {
+        "id" : 4,
+        "nom" : "BenQ 24 LED - GL2460HM",
+        "prix": 159.95,
+        "description": "Le BenQ GL2460HM est un moniteur performant et design, il incarne la simplicité et la sophistication,et est idéal aussi bien pour une utilisation au bureau que chez vous. Il présente chaque détail des images dans la meilleure qualité de visualisation grâce aux optimisations Senseye Human Vision."
+      }
+    }
+]

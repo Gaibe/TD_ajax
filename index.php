@@ -11,11 +11,6 @@
 
 <body>
 
-<ul id="liste-produits">
-
-</ul>
-
-
 
 
 
