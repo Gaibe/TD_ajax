@@ -62,7 +62,8 @@ $(document).ready(function () {
         type: 'POST',
         data : {  id_article : id },
         success: function(result) {
-          $("body").append(result);
+          $("#panier").append(result);
+
         }
     })
     .done(function (data) {
