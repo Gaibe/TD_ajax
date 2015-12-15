@@ -3,7 +3,7 @@ $(document).ready(function () {
   function getArt() {
     var objJson = $('<ul id="liste-produits">');
     $.ajax({
-        url: "scriptJson.php"
+        url: "produit.php"
     })
     .done(function (data) {
         var articles = $.parseJSON(data);
