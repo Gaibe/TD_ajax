@@ -63,6 +63,18 @@ $(document).ready(function () {
         data : {  id_article : id },
         success: function(result) {
           $("#panier").append(result);
+          
+          /*
+          var total = 0;
+          console.log(total);
+          $( result ).each(function( index ) {  
+            total += result[index].produit.prix* result[index].produit.nombre; 
+            console.log(total);   
+          });
+          console.log(total);
+          $("#panier").prepend(total);
+          */
+
 
         }
     })
