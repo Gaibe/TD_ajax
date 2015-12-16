@@ -15,7 +15,11 @@ if (isset($_POST['id_article']) ) {
 
     
     if ($produit_to_add !== null) {
-        $json_panier = file_get_contents('panier.json');
+        if (file_exists('panier.json')) {
+            $json_panier = file_get_contents('panier.json');
+        } else {
+            $json_panier = file_get_contents('panier-default.json');
+        }
         $decoded_panier = json_decode($json_panier);
         // vérif si existe déjà
         $existe = false;
@@ -45,8 +49,11 @@ if (isset($_POST['id_article']) ) {
 
 
 } else { // si get
-    $json_source = file_get_contents('panier.json');
-	echo $json_source;
+    if (!file_exists('panier.json')) {
+        file_put_contents('panier.json', file_get_contents('panier-default.json'));
+    }
+    $json_panier = file_get_contents('panier.json');
+	echo $json_panier;
 }
 
 
