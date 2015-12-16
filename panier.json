@@ -1,1 +1,19 @@
-[{"produit":{"id":1,"nom":"Seagate Barracuda 7200.14 SATA 6Gb\/s 1 To","prix":56.95,"nombre":11}},{"produit":{"id":4,"nom":"BenQ 24 LED - GL2460HM","prix":159.95,"nombre":3}},{"produit":{"id":2,"nom":"Acer Liquid Jade S Noir","prix":259.96,"description":"A l image de son pr\u00e9d\u00e9cesseur, le Acer Liquid Jade S b\u00e9n\u00e9ficie de superbes lignes arrondies tout en \u00e9tant aussi compact. Qui plus est, il offre de magnifiques motifs textur\u00e9s \u00e0 l arri\u00e8re et des appareils photo \u00e0 commande vocale, ainsi qu une puissance et une vitesse exceptionnelle.","nombre":3}},{"produit":{"id":3,"nom":"Sony Playstation 3 Ultra Slim","prix":199.95,"description":"Incarnant le meilleur du jeu vid\u00e9o et du divertissement \u00e0 domicile, la PlayStation 3 procure des exp\u00e9riences r\u00e9solument in\u00e9dites pour toute la famille. Lancez-vous dans des aventures incroyables, regardez des films en Haute D\u00e9finition, plongez au coeur d un univers de divertissement complet !","nombre":1}}]
+[
+
+    {
+      "produit": {
+        "id" : 3,
+        "nom" : "Sony Playstation 3 Ultra Slim",
+        "prix": 199.95,
+        "nombre" : 5
+      }
+    },
+    {
+      "produit": {
+        "id" : 4,
+        "nom" : "BenQ 24 LED - GL2460HM",
+        "prix": 159.95,
+        "nombre" : 1
+      }
+    }
+]
