@@ -30,7 +30,32 @@ $(document).ready(function () {
     return objJson;
   }
   
-  
+  function commander(art) {
+    var load = '<img class="wait" src="img/ajax-loader.gif" alt="Loading" />'
+    art.append(load);
+
+    $.ajax({
+        url: 'http://localhost/TP_ajax/commande.php',
+        type: 'GET'
+        
+        
+    })
+    .done(function (data) {
+       art.children('img').remove();
+       if (data === "OK")
+        art.append('<img src="img/ok.jpg" alt="OK" height="32" width="32" />');
+      else 
+        art.append('Erreur stock ');
+       
+
+    })
+    .fail(function () {
+        alert("Echec commande");
+    });
+    
+
+  }
+
 
   function detailPanier() {
     var objJson = $('<ul id="panier">');
@@ -48,7 +73,16 @@ $(document).ready(function () {
                                             )
                           );             
         });
+        // if plusiuers art
+        objJson.append($("<button>").text("commander") 
+        .click(function () {
+            objJson.children('li').each(function() {
 
+              commander($(this));
+            });
+            
+          }) 
+        );
 
     })
     .fail(function () {
@@ -63,7 +97,8 @@ $(document).ready(function () {
         type: 'POST',
         data : {  id_article : id },
         success: function(result) {
-          $("#panier").append(result);
+          $("#panier").remove();
+          $('body').prepend(detailPanier());
           
         }
     })
