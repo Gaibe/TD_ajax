@@ -27,18 +27,21 @@ if (isset($_POST['id_article']) ) {
         foreach ($decoded_panier as $key => $article) {
             // var_dump("<pre>",$article->produit->id,"</pre>");
             if ( $article->produit->id == $produit_to_add->produit->id) {
-               $nb = $decoded_panier[$key]->produit->nombre++;
+                $article->produit->nombre++;
                 $existe = true;
             }
         }
+     
         if (! $existe)  {
-            array_push($decoded_panier, $produit);
+            $produit_to_add->produit;
+            unset($produit_to_add->produit->description);
+            $produit_to_add->produit->nombre = 1;
+            array_push($decoded_panier, $produit_to_add);  
 
-            echo json_encode( $produit_to_add);
         }
-        else {
-            echo json_encode($nb);
-        }
+        //var_dump("<pre>",$decoded_panier,"</pre>");
+
+        echo json_encode( $decoded_panier);
         $encoded_panier = json_encode($decoded_panier);
         file_put_contents('panier.json', $encoded_panier);
         

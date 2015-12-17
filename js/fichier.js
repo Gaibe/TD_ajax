@@ -30,6 +30,7 @@ $(document).ready(function () {
     return objJson;
   }
   
+  
 
   function detailPanier() {
     var objJson = $('<ul id="panier">');
@@ -64,18 +65,6 @@ $(document).ready(function () {
         success: function(result) {
           $("#panier").append(result);
           
-          /*
-          var total = 0;
-          console.log(total);
-          $( result ).each(function( index ) {  
-            total += result[index].produit.prix* result[index].produit.nombre; 
-            console.log(total);   
-          });
-          console.log(total);
-          $("#panier").prepend(total);
-          */
-
-
         }
     })
     .done(function (data) {
