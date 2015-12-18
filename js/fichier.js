@@ -50,7 +50,7 @@ $(document).ready(function () {
        if (data === "OK") {
         art.children('img.wait-preparer').replaceWith('<img src="img/ok.jpg" alt="OK" height="32" width="32" />');
         if ( ($('img.wait-preparer').length === 0) ) {
-          art.parents("#panier").after($("<p>").text("Tous les articles sont prêts"));
+          art.parents("#panier").append($("<p>").text("Tous les articles sont prêts"));
         }
         envoi(art);
       } else {
@@ -79,7 +79,7 @@ $(document).ready(function () {
       if (data === "OK") {
         art.children('img.wait-envoi').replaceWith('Envoyé !');
         if ($('img.wait-envoi').length === 0) {
-          art.parents("#panier").after($("<p>").text("Tous les articles ont été expédié"));
+          art.parents("#panier").append($("<p>").text("Tous les articles ont été expédiés"));
         }
       } else {
         art.children('img.wait-envoi').replaceWith('Erreur de livraison');
