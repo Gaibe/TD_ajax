@@ -25,7 +25,7 @@ if (isset($_POST['id_article']) ) {
         $existe = false;
 
         foreach ($decoded_panier as $key => $article) {
-            // var_dump("<pre>",$article->produit->id,"</pre>");
+            
             if ( $article->produit->id == $produit_to_add->produit->id) {
                 $article->produit->nombre++;
                 $existe = true;
@@ -39,7 +39,7 @@ if (isset($_POST['id_article']) ) {
             array_push($decoded_panier, $produit_to_add);  
 
         }
-        //var_dump("<pre>",$decoded_panier,"</pre>");
+       
 
         echo json_encode( $decoded_panier);
         $encoded_panier = json_encode($decoded_panier);

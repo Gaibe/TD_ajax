@@ -1,6 +1,6 @@
 <?php
 
-sleep(rand(2, 3 ));
+sleep(rand(1, 5 ));
 echo "OK";
 
 

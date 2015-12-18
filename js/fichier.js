@@ -46,12 +46,13 @@ $(document).ready(function () {
         contentType: "application/json",
     })
     .done(function (data) {
-       // art.children('img.wait-preparer').remove();
+       
        if (data === "OK") {
         art.children('img.wait-preparer').replaceWith('<img src="img/ok.jpg" alt="OK" height="32" width="32" />');
         if (art.is(':last-child')) {
           art.parents("#panier").after($("<p>").text("Tous les articles sont prêts"));
         }
+        envoi(art);
       } else {
         art.children('img.wait-preparer').replaceWith('Erreur de préparation ');
       }
@@ -74,7 +75,7 @@ $(document).ready(function () {
         contentType: "application/json",
     })
     .done(function (data) {
-      // art.children('img.wait-envoi').remove();
+      
       if (data === "OK") {
         art.children('img.wait-envoi').replaceWith('Envoyé !');
         if (art.is(':last-child')) {
@@ -110,17 +111,20 @@ $(document).ready(function () {
                                             )
                           );             
         });
-        // if plusiuers art
-        objJson.append($("<button>").addClass("commander").text("commander") 
-        .click(function () {
-            objJson.children('li').each(function() {
+        if (panier.length > 0 ) {
+          objJson.append($("<button>").addClass("commander").text("commander") 
+          .click(function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+              objJson.children('li').each(function() {
 
-              preparer($(this))
-              envoi($(this));
-            });
-            
-          }) 
-        );
+                preparer($(this));
+                // envoi($(this));
+              });
+              
+            }) 
+          );
+      }
 
     })
     .fail(function () {
