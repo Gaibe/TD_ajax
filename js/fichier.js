@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
   function getArt() {
-    
+    $(".commander").show("fast");
     var objJson = $('<ul id="liste-produits">')
                     .append($("<h2>")
                     .text("Catalogue de produit :"));
@@ -52,6 +52,7 @@ $(document).ready(function () {
         if (art.is(':last-child')) {
           art.parents("#panier").after($("<p>").text("Tous les articles sont prêts"));
         }
+        envoi(art);
       } else {
         art.children('img.wait-preparer').replaceWith('Erreur de préparation ');
       }
@@ -112,11 +113,13 @@ $(document).ready(function () {
         });
         if (panier.length > 0 ) {
           objJson.append($("<button>").addClass("commander").text("commander") 
-          .click(function () {
+          .click(function (event) {
+            event.preventDefault();
+            event.stopPropagation();
               objJson.children('li').each(function() {
 
-                preparer($(this))
-                envoi($(this));
+                preparer($(this));
+                // envoi($(this));
               });
               
             }) 
@@ -127,7 +130,7 @@ $(document).ready(function () {
     .fail(function () {
         alert("Echec Panier");
     });
-    return objJson.hide().fadeIn(800);
+    return objJson;
   }
 
   function ajoutePanier(id) {
