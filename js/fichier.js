@@ -49,7 +49,7 @@ $(document).ready(function () {
        
        if (data === "OK") {
         art.children('img.wait-preparer').replaceWith('<img src="img/ok.jpg" alt="OK" height="32" width="32" />');
-        if (art.is(':last-child')) {
+        if ( ($('img.wait-preparer').length === 0) ) {
           art.parents("#panier").after($("<p>").text("Tous les articles sont prêts"));
         }
         envoi(art);
@@ -78,7 +78,7 @@ $(document).ready(function () {
       
       if (data === "OK") {
         art.children('img.wait-envoi').replaceWith('Envoyé !');
-        if (art.is(':last-child')) {
+        if ($('img.wait-envoi').length === 0) {
           art.parents("#panier").after($("<p>").text("Tous les articles ont été expédié"));
         }
       } else {
@@ -117,9 +117,9 @@ $(document).ready(function () {
             event.preventDefault();
             event.stopPropagation();
               objJson.children('li').each(function() {
-
+               
                 preparer($(this));
-                // envoi($(this));
+               // envoi($(this));
               });
               
             }) 
